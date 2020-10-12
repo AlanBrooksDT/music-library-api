@@ -1,0 +1,19 @@
+{
+  "name": "music-library.api",
+  "version": "1.0.0",
+  "description": "Music Library API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanBrooksDT/music-library-api.git"
+  },
+  "author": "Alan Brooks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanBrooksDT/music-library-api/issues"
+  },
+  "homepage": "https://github.com/AlanBrooksDT/music-library-api#readme"
+}
