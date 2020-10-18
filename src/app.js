@@ -12,5 +12,7 @@ app.get('/', (req, res) => {
 app.post('/artists', artistControllers.create);
 app.get('/artists', artistControllers.list);
 app.get('/artists/:artistId', artistControllers.read);
+app.patch('/artists/:artistId', artistControllers.updateArtistById);
+app.delete('/artists/:artistId', artistControllers.deleteArtist);
 
 module.exports = app
