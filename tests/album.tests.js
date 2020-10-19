@@ -68,19 +68,33 @@ describe('/albums', () => {
         });
     });
   });
+  describe('with albums in the database', () => {
+    let albums;
+    beforeEach((done) => {
+      Promise.all([
+        Album.create({ name: 'Just Noise', year: 1998 }),
+        Album.create({ name: 'Noughties', year: 2007 }),
+        Album.create({ name: 'What a Year', year: 2020}),
+      ]).then((documents) => {
+        albums = documents;
+        done();
+      });
+    });
   
   describe('GET /artists/:artistId', () => {
     it('gets artists albums record by id', (done) => {
-        let albums;
-      const album = albums;
+      const album = albums[0];
       request(app)
-        .get(`/artists/${artist.id}/albums`)
+        .get(`/artists/${album.id}/albums`)
         .then((res) => {
           expect(res.status).to.equal(200);
           expect(res.body.name).to.equal(album.name);
           expect(res.body.year).to.equal(album.year);
+          console.log(album.name);
+          console.log(album.year);
           done();
         });
     });
+});
 });
 });
