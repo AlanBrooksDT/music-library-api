@@ -18,7 +18,7 @@ we call connection.sync() and return an object containing our Artist object.*/
   const Artist = ArtistModel(connection, Sequelize);
   const Album = AlbumModel(connection, Sequelize);
 
-  Album.belongsTo(Artist, { as: 'artist' });
+  Album.belongsTo(Artist, { as: 'artist' });//creates artist.Id (Artist table, ID column)
 
   connection.sync({ alter: true });
   return {
